@@ -1,0 +1,110 @@
+@import 'Reset.scss';
+@import './components/Menu.scss';
+
+//Custom reset
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	font-family: "Roboto", "Helvetica Neue", "Helvetica",  "Arial", sans-serif;
+}
+
+a{
+    //color:inherit;
+    text-decoration: none;
+    &:hover{
+        opacity: 0.75;
+    }
+}
+
+
+//Common layout
+.c-header{
+    margin-bottom: 2rem;
+}
+.container{
+    width:1000px;
+    margin:0 auto;
+}
+
+//Others
+.mp0 {
+    margin: 0px;
+    padding: 0px;
+  }
+  .p0 {padding:0px !important;}
+  .m0{margin:0px !important;}
+  
+  .pT0 {padding-top:0px !important;}
+  .pT5 {padding-top:5px !important;}
+  .pT10 {padding-top:10px !important;}
+  .pT15 {padding-top:15px !important;}
+  .pT20 {padding-top:20px !important;}
+  .pT30 {padding-top:30px !important;}
+  .pT40 {padding-top:40px !important;}
+  .pT50 {padding-top:50px !important;}
+  .pT60 {padding-top:60px !important;}
+  
+  .pB5 {padding-bottom:5px !important;}
+  .pB10 {padding-bottom:10px !important;}
+  .pB20 {padding-bottom:20px !important;}
+  .pB30 {padding-bottom:30px !important;}
+  .pB40 {padding-bottom:40px !important;}
+  .pB50 {padding-bottom:50px !important;}
+  .pB60 {padding-bottom:60px !important;}
+  
+  .pL5 {padding-left:5px !important;}
+  .pL10 {padding-left:10px !important;}
+  .pL20 {padding-left:20px !important;}
+  .pL30 {padding-left:30px !important;}
+  .pL40 {padding-left:40px !important;}
+  .pL50 {padding-left:50px !important;}
+  .pL60 {padding-left:60px !important;}
+  
+  .pR0 {padding-right:0px !important;}
+  .pR10 {padding-right:10px !important;}
+  .pR20 {padding-right:20px !important;}
+  .pR30 {padding-right:35px !important;}
+  .pR40 {padding-right:20px !important;}
+  .pR50 {padding-right:55px !important;}
+  .pR60 {padding-right:55px !important;}
+  
+  .mT0 {margin-top:0px !important;}
+  .mT5 {margin-top:5px !important;}
+  .mT10 {margin-top:10px !important;}
+  .mT15 {margin-top:15px !important;}
+  .mT20 {margin-top:20px !important;}
+  .mT25 {margin-top:25px !important;}
+  .mT30 {margin-top:30px !important;}
+  .mT40 {margin-top:40px !important;}
+  .mT50 {margin-top:50px !important;}
+  .mT60 {margin-top:60px !important;}
+  
+  .mB0 {margin-bottom:0px !important;}
+  .mB10 {margin-bottom:10px !important;}
+  .mB20 {margin-bottom:20px !important;}
+  .mB25 {margin-bottom:25px !important;}
+  .mB30 {margin-bottom:30px !important;}
+  .mB40 {margin-bottom:40px !important;}
+  .mB50 {margin-bottom:50px !important;}
+  .mB60 {margin-bottom:60px !important;}
+  
+  .mL0 {margin-left: 0px !important;}
+  .mL10 {margin-left: 10px !important;}
+  .mL15 {margin-left: 15px !important;}
+  .mL20 {margin-left: 20px !important;}
+  .mL30 {margin-left: 30px !important;}
+  
+  .mR0 {margin-right: 0px !important;}
+  .mR5 {margin-right: 5px !important;}
+  .mR10 {margin-right: 10px !important;}
+  .mR20 {margin-right: 20px !important;}
+  .mR30 {margin-right: 30px !important;}
+  .mR40 {margin-right: 40px !important;}
+  
+  .tCenter {text-align:center !important;}
+  .tLeft {text-align:left !important;}
+  .tRight {text-align:right !important;}
+  
+  .fLeft{float:left !important;}
+  .fRight{float:right !important;}
+  
