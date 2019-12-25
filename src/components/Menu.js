@@ -10,13 +10,13 @@ export class Menu extends Component {
     
             width: null,
             offsetLeft: null,
+            bool: false,
     
         }
     }
 
-    handleLinkClicked = (id, ref) => {
+    handleLinkClicked = (id) => {
         this.setState({ currentLink: id });
-        console.log(ref);
     }
 
     componentDidMount() {
@@ -24,8 +24,28 @@ export class Menu extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+      
         if(this.state.currentLink != prevState.currentLink){
-            this.setState({width: this.menuRef.current.width, offsetLeft: this.menuRef.current.offsetLeft});
+            if(this.state.currentLink > prevState.currentLink){
+                this.setState((state) => {
+                    return {width: this.menuRef.current.offsetWidth + this.menuRef.current.offsetLeft - state.offsetLeft, offsetLeft: state.offsetLeft, bool: true}
+                });
+            }else{
+                this.setState((state) => {
+                    //console.log( this.menuRef.current.offsetWidth, this.menuRef.current.offsetLeft,  state.offsetLeft);
+                    return {width:  state.offsetLeft - this.menuRef.current.offsetLeft, offsetLeft: this.menuRef.current.offsetLeft, bool: true}
+                });
+            }
+
+        }
+
+    }
+
+    updateLineStyle = () =>{
+        if(this.state.bool){
+            this.setState(state => {
+                return {width: this.menuRef.current.offsetWidth, offsetLeft:this.menuRef.current.offsetLeft, bool:false}
+            })
         }
     }
     render() {
@@ -54,7 +74,7 @@ export class Menu extends Component {
                             })
                         }
                     </ul>
-                <div className="line" style={lineStyle}></div>
+                <div className="line" style={lineStyle} onTransitionEnd={() => this.updateLineStyle()}></div>
             </div>
         )
     }

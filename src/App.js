@@ -11,7 +11,7 @@ import {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/test">
       <div className="App">
         <Header/>
 
