@@ -11,6 +11,8 @@ import MenuChild from './MenuChild';
 import HelloWorld from './HelloWorld';
 import Home from './Home';
 
+import ProductsList from './ProductsList';
+
 export {
-    Header, Body, Footer, HelloWorld, Menu, MenuChild, Home
+    Header, Body, Footer, HelloWorld, Menu, MenuChild, Home, ProductsList
 }

@@ -1,0 +1,55 @@
+$border_width: 3px;
+
+.products-header{
+    border:$border_width solid black;
+    padding:2rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    .header-ttl{
+        font-weight: bold;
+        font-size:2.5rem;
+    }
+    margin-bottom: 2.5rem;
+}
+
+.products-body{
+    display:flex;
+    .products-tabList{
+        width:20%;
+        li{
+            width:100%;
+            margin-bottom: 10px;;
+            button{
+                width:100%;
+                border:2px solid black;
+                border-radius: 5px;
+                font-size:1rem;
+                padding:5px;
+                cursor: pointer;
+                &:hover{
+                    background:black;
+                    color:#fff;
+                    transition:.2s linear;
+                }
+            }
+            &.active{
+                button{
+                    background:black;
+                    color:#fff;
+                    transition:.2s linear;
+                }
+
+            }
+        }
+    }
+    .product-table{
+        width:80%;
+        border:2px solid black;
+        height:300px;
+        border-radius: 3px;
+        margin-left:10px;
+        overflow: hidden;
+    }
+    
+}
