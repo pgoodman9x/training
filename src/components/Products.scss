@@ -1,7 +1,5 @@
-$border_width: 3px;
-
 .products-header{
-    border:$border_width solid black;
+    border:2px solid black;
     padding:2rem;
     display:flex;
     align-items: center;
@@ -43,13 +41,119 @@ $border_width: 3px;
             }
         }
     }
-    .product-table{
+    .product-tabContent{
         width:80%;
         border:2px solid black;
-        height:300px;
         border-radius: 3px;
         margin-left:10px;
-        overflow: hidden;
+        overflow-y: scroll;
+        padding:2rem;
     }
-    
+
+    .productTable{
+        border:2px solid black;
+        width:100%;
+       // height:100%;
+        border-radius: 5px;
+        padding:10px;
+        table-layout: fixed;
+        tr{
+            
+            th, td{
+                padding:10px;
+               // width:calc(100%/5);
+                text-align: left;
+                border:1px solid;
+                vertical-align: top;
+            }
+            th{
+                background:grey;
+                color:#fff;
+                border:1px solid black;
+                position: relative;
+            }
+        }
+    }
+
+    .productForm{
+        margin-bottom: 20px;
+        ul{
+            margin-bottom: 10px;
+        }
+        li{
+            display:flex;
+            align-items: center;
+            border:1px solid;
+            padding:5px;
+            min-height:40px;
+        }
+        .form-ttl{
+            width:10%;
+            background:white;
+            color:black;
+            border-right:1px solid;
+            padding: 0 10px;
+        }
+        .form-input{
+            width:80%;
+            padding:0 10px;
+            input{
+                height:30px;
+                width:100%;
+                padding:0 10px;
+            }
+        }
+    }
+}
+
+.sort-control{
+    position: absolute;
+    top:0;
+    right:5px;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    .sort{
+        position: relative;
+        width:15px;
+        height:15px;
+        margin:1px 0;
+        border:none;
+        cursor: pointer;
+        &:after{
+            content:'';
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            border-style:solid;
+        }
+        &--up{
+            &:after{
+                border-width:0px 5px 8px 5px;
+                border-color:transparent transparent black transparent;
+            }
+        }
+        &--down{
+            &:after{
+                border-width:8px 5px 0px 5px;
+                border-color:black transparent transparent transparent;
+            }
+        }
+
+        &:hover{
+            background:black;
+            &.sort--up{
+                &:after{
+                    border-color:transparent transparent white transparent;
+                }
+            }
+            &.sort--down{
+                &:after{
+                    border-color:white transparent transparent transparent;
+                }
+            }
+        }
+    }
 }
