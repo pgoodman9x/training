@@ -27,7 +27,9 @@ class ProductList extends Component {
             showForm: false,
             selectedProduct: null,
             orderBy: 'id',
-            orderDir: 'asc'
+            orderDir: 'asc',
+
+            isEditing:false,
         }
     }
 
@@ -59,6 +61,7 @@ class ProductList extends Component {
     showFormHandle = (productId) => {
             this.setState((state) => {
                 return {
+                    isEditing: true,
                     showForm: true,
                     selectedProduct: (productId) ? productId : null,
                 }
@@ -74,17 +77,28 @@ class ProductList extends Component {
     }
 
     handleChangeProduct = (product) => {
-       const { products, selectedProduct } = this.state;
-       const foundedProduct = products.find(product => product.id === selectedProduct);
-       foundedProduct["name"] = product.name;
-       foundedProduct["price"] = product.price;
-       foundedProduct["image"] = product.image;
+       const { products, selectedProduct, isEditing } = this.state;
+       let newProductList;
+       if(isEditing){
+            const foundedProduct = products.find(product => product.id === selectedProduct);
+            foundedProduct["name"] = product.name;
+            foundedProduct["price"] = product.price;
+            foundedProduct["image"] = product.image;
+
+            newProductList = products;
+            console.log(newProductList);
+       }else{
+           newProductList = [...products, {id: products.length + 1, name:product.name, price:product.price, image:product.image}]
+       }
+
       
        this.setState({
            showForm:false,
-           products: this.state.products,
+           products: newProductList,
            selectedProduct: null,
-       })
+           isEditing: false,
+       }) 
+       this.props.parentRequestFn(false);
     }
 
     render() {
@@ -92,6 +106,8 @@ class ProductList extends Component {
         const { products, showForm, selectedProduct, orderBy, orderDir } = this.state;
         const rows = [];
 
+        console.log(this.props.parentRequestFn);
+     
         function orderProducts(productList, orderBy, orderDir) {
             switch (orderDir) {
                 case "asc":

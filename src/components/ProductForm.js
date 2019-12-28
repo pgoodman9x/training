@@ -6,6 +6,7 @@ class ProductForm extends Component {
         this.state = {
             product: props.product,
             productList: props.productList,
+     
             productName: (props.product) ? props.product.name : '',
             productPrice: (props.product) ? props.product.price : 0,
             productImgSrc: (props.product) ? props.product.image : '',
@@ -40,6 +41,7 @@ class ProductForm extends Component {
     }
     render() {
         const {product, productName, productPrice, productImgSrc, productList} = this.state;
+     
         return (
             <form onSubmit={this.submitForm} className="productForm">
                 <ul>

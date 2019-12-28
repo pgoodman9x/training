@@ -6,6 +6,9 @@ import {HelloWorld} from './AllComponents';
 
 export default function Products(){
     const [bool, setBool] = useState(false);
+    const setForm = (value) => {
+        setBool(value);
+    }
     return(
         <React.Fragment>
             <div className="products-header">
@@ -15,7 +18,7 @@ export default function Products(){
 
             <Tabs defaultActiveKey="productlist">
                 <Tab eventKey="productlist" name="Product List">
-                    <ProductList parentRequest={bool}/>
+                    <ProductList parentRequest={bool} parentRequestFn={setForm}/>
                 </Tab>
                 <Tab eventKey="test" name="Test Tab">
                     <HelloWorld />
